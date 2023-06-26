@@ -1,19 +1,13 @@
-#include "ClapTrap.hpp"
-#include "FragTrap.hpp"
+#include "DiamondTrap.hpp"
 
 int main(void)
 {
-	FragTrap fragone;
-	FragTrap fragtwo("dumbo");
-	FragTrap fragthree("idiot");
-
-	for (int i = 0; i < 5; i++)
-	{
-		fragtwo.attack(fragthree.getName());
-		fragthree.takeDamage(fragtwo.getAttackdamage());
-		std::cout << fragtwo.getEnergypoints() << " energy points of " << fragtwo.getName() << std::endl;
-		std::cout << fragthree.getHitpoints() << " hit points of " << fragthree.getName() << std::endl;
-	}
-	fragtwo.highFivesGuys();
+	DiamondTrap diaone("Bobik");
+	diaone.attack("Carl");
+	diaone.takeDamage(6);
+	diaone.beRepaired(4);
+	diaone.guardGate();
+	diaone.highFivesGuys();
+	diaone.whoAmI();
 	return (0);
 }

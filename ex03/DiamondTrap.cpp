@@ -9,12 +9,13 @@ DiamondTrap::DiamondTrap() : ClapTrap(), FragTrap(), ScavTrap()
 	std::cout << "Default constructor of DiamondTrap is called" << std::endl;
 }
 
-DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name), ScavTrap(), FragTrap()
+DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name), FragTrap(), ScavTrap()
 {
 	_hitpoints = ScavTrap::_hitpoints;
 	_energypoints = ScavTrap::_energypoints;
 	_attackdamage = FragTrap::_attackdamage;
 	_name = name;
+	ClapTrap::_name = name + "_clap_name";
 	std::cout << "Constructor of DiamondTrap with name is called" << std::endl;
 }
 
@@ -23,7 +24,7 @@ DiamondTrap::~DiamondTrap()
 	std::cout << "Dectructor of DiamondTrap is called" << std::endl;
 }
 
-DiamondTrap::DiamondTrap(DiamondTrap const &iamondTrap)
+DiamondTrap::DiamondTrap(DiamondTrap const &diamondtrap)
 {
 	std::cout << "Copy constructor of DiamondTrap is called" << std::endl;
 	*this = diamondtrap;
@@ -41,13 +42,10 @@ DiamondTrap &DiamondTrap::operator=(DiamondTrap const &diamondtrap)
 
 void DiamondTrap::attack(const std::string &target)
 {
-	if (_energypoints == 0)
-		_attackdamage = 0;
-	if (_hitpoints > 0 && _energypoints > 0 && _attackdamage > 0)
-	{
-		std::cout << "DiamondTrap " << _name << " attacks " << target << " causing " << _attackdamage << " points of damage." << std::endl;
-		_energypoints--;
-	}
-	else
-		std::cout << _name << " can't attack." << std::endl;
+	ScavTrap::attack(target);
+}
+
+void DiamondTrap::whoAmI()
+{
+	std::cout << "My name is " << _name << " and ClapTrap's name is " << ClapTrap::_name << std::endl;
 }

@@ -6,7 +6,7 @@ FragTrap::FragTrap() : ClapTrap()
 	_energypoints = 100;
 	_attackdamage = 30;
 	_name = "Untitled";
-	std::cout << "Default constructor of ScavTrap is called" << std::endl;
+	std::cout << "Default constructor of FragTrap is called" << std::endl;
 }
 
 FragTrap::FragTrap(std::string name) : ClapTrap(name)
@@ -15,23 +15,23 @@ FragTrap::FragTrap(std::string name) : ClapTrap(name)
 	_energypoints = 100;
 	_attackdamage = 30;
 	_name = name;
-	std::cout << "Constructor of ScavTrap with name is called" << std::endl;
+	std::cout << "Constructor of FragTrap with name is called" << std::endl;
 }
 
 FragTrap::~FragTrap()
 {
-	std::cout << "Dectructor of ScavTrap is called" << std::endl;
+	std::cout << "Dectructor of FragTrap is called" << std::endl;
 }
 
 FragTrap::FragTrap(FragTrap const &fragtrap)
 {
-	std::cout << "Copy constructor of ScavTrap is called" << std::endl;
+	std::cout << "Copy constructor of FragTrap is called" << std::endl;
 	*this = fragtrap;
 }
 
 FragTrap &FragTrap::operator=(FragTrap const &fragtrap)
 {
-	std::cout << "Copy assignment operator of ScavTrap called" << std::endl;
+	std::cout << "Copy assignment operator of FragTrap called" << std::endl;
 	this->_name = fragtrap._name;
 	this->_hitpoints = fragtrap._hitpoints;
 	this->_energypoints = fragtrap._energypoints;
