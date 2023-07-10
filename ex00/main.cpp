@@ -2,6 +2,7 @@
 
 int main(void)
 {
+
 	ClapTrap claptwo("Sam");
 	ClapTrap clapthree("Dean");
 

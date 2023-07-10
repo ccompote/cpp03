@@ -68,7 +68,7 @@ void ClapTrap::takeDamage(unsigned int amount)
 
 void ClapTrap::beRepaired(unsigned int amount)
 {
-	if (_energypoints > 0 && _energypoints > 0)
+	if (_energypoints > 0 && _hitpoints > 0)
 	{
 		_hitpoints+=amount;
 		_energypoints--;
